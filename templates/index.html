@@ -1,0 +1,309 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Safe mail</title>
+    <link rel="stylesheet" href="/static/styles.css">
+    <style>
+       @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins";
+}
+html{
+scroll-behavior:smooth;
+}
+body,html{
+    width: 100%;
+    height: 100%;
+}
+body{
+    position: relative;
+}
+nav{
+    position: absolute;
+    margin: 1rem 15%;
+    width:70%;
+    padding: 2rem 4rem;
+    background-color: #fafafa8e;
+    border-radius: 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    backdrop-filter: blur(10px);
+    color: white;
+}
+.links{
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}
+.links a{
+    text-decoration: none;
+    color: white;
+    font-size: 1.2rem;
+}
+.links a:hover{
+    transition: .3s all ease;
+    color: blue;
+}
+.links button{
+    padding: 1rem;
+    border: 1px solid white;background: none;
+    border-radius: 100px;
+    color: white;
+    font-size: 1.1rem;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    font-weight: 600;
+}
+.links button::before{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width:0%;
+    height: 100%;
+    background-color: blue;
+    border-radius: 100px;
+    z-index: -1;
+    transition: .3s all ease;
+}
+.links button:hover::before{
+    width: 100%;
+}
+.logo h1{
+    font-size: 2rem;
+    font-weight: 500;
+}
+.logo span{
+    color: rgba(16, 0, 235, 0.712);
+}
+.page1{
+    height: 100vh;
+    width: 100%;
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("https://img.freepik.com/free-vector/cyber-security-concept_53876-93472.jpg?w=1380&t=st=1719724179~exp=1719724779~hmac=965754257faac6a70ec0cfa37d44f818abe91d5415b26ac524ffeddd779cce05");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    color: white;
+}
+.page1 h1{
+    font-size: 5rem;
+    color: rgb(255, 136, 0);
+}
+.page1 p{
+    font-size: 1.5rem;
+}
+.page1 button{
+    padding: 2rem 4rem ;
+    border-radius: 100px;
+    border: none;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: blue;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    z-index: 2;
+}
+.page1 button::before{
+    content: "";
+    position: absolute;
+    bottom: -100%;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius:100px;
+    background-color:blue;
+    transition: .3s all ease;
+    z-index: -1;
+}
+.page1 button:hover::before{
+    bottom: 0;
+}
+.page1 button:hover{
+    color: white;
+}
+#page2{
+    min-height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    background-color: #f5f5f6f6;
+}
+#page2 input {
+    width: 60%;
+    font-size: 1.2rem;
+    padding: 1rem 3rem;
+    color: black;
+    border-top-left-radius: .5em;
+    border-bottom-left-radius: .5em;
+    border: 1px solid #00000056;
+}
+#page2 form{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+#page2 input:focus {
+    outline: none;
+    box-shadow: none;
+}
+#page2 button {
+    border: none;
+    font-size: 1rem;
+    font-weight: 400;
+    background-color: #1363DF;
+    text-decoration: none;
+    padding: 1rem 2rem;
+    color: #fff;
+    border-top-right-radius: .5em;
+    border-bottom-right-radius: .5em;
+    cursor: pointer;
+}
+#page2 button:hover {
+    background-color: #245aaaa1;
+}
+#page2 h1{
+    font-size: 5rem;
+    font-weight: 500;
+    color: #1363DF;
+}
+#page2 p{
+    font-size: 1.3rem;
+}
+#result {
+    display: none;
+    margin-top: 2rem;
+    width: 60%;
+    background: #fff;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+#result p, #result h3, #result ul {
+    margin-bottom: 1rem;
+}
+#result h3 {
+    font-size: 1.5rem;
+    color: #1363DF;
+}
+#result ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+#result ul li {
+    background: #f5f5f5;
+    margin-bottom: 0.5rem;
+    padding: 0.5rem;
+    border-radius: 4px;
+}
+.loader {
+    border: 8px solid #f3f3f3;
+    border-radius: 50%;
+    border-top: 8px solid #1363DF;
+    width: 50px;
+    height: 50px;
+    animation: spin 1s linear infinite;
+    margin: 2rem auto;
+    display: none;
+}
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+    </style>
+</head>
+<body>
+    <div class="main">
+        <nav>
+            <div class="logo">
+                <h1>Safe<span>Mail</span></h1>
+            </div>
+            <div class="links">
+                <a href="#">Home</a>
+                <a href="#">About</a>
+                <a href="#">Contact</a>
+                <a href="#page2"><button>Check Now</button></a>
+            </div>
+        </nav>
+        <div class="page1">
+            <h1>Email Safety</h1>
+            <p>Unleash the Power of SafeMail: Check, Detect, and Secure Your Email Addresses!</p>
+            <a href="#page2"><button>Get Started</button></a>
+        </div>
+        <div id="page2">
+            <h1>Secure Your Email</h1>
+            <p>Enter the email to get details</p>
+            <form id="emailForm" method="POST" action="/check">
+                <input type="email" id="email" name="email" required>
+                <button type="submit">Check</button>
+            </form>
+            <div class="loader" id="loader"></div>
+            <div id="result"></div>
+        </div>
+    </div>
+    <script>
+        document.getElementById('emailForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            const loader = document.getElementById('loader');
+            const resultDiv = document.getElementById('result');
+            loader.style.display = 'block';
+            resultDiv.style.display = 'none';
+            resultDiv.innerHTML = '';
+
+            const formData = new FormData(this);
+            fetch('/check', {
+                method: 'POST',
+                body: formData
+            })
+            .then(response => response.json())
+            .then(data => {
+                loader.style.display = 'none';
+                resultDiv.style.display = 'block';
+                displayResult(data);
+            })
+            .catch(error => {
+                loader.style.display = 'none';
+                console.error('Error:', error);
+            });
+        });
+
+        function displayResult(data) {
+            const resultDiv = document.getElementById('result');
+            resultDiv.innerHTML = '';
+
+            if (data.error) {
+                resultDiv.textContent = data.error;
+            } else {
+                const emailInfo = `
+                    <p><strong>Email:</strong> ${data.email || 'N/A'}</p>
+                    <p><strong>Reputation:</strong> ${data.reputation || 'N/A'}</p>
+                    <p><strong>Suspicious:</strong> ${data.suspicious || 'N/A'}</p>
+                    <p><strong>References:</strong> ${data.references || 'N/A'}</p>
+                    <h3>Details:</h3>
+                    <ul>
+                        ${Object.entries(data.details || {}).map(([key, value]) => `<li><strong>${key}:</strong> ${value}</li>`).join('')}
+                    </ul>
+                `;
+                resultDiv.innerHTML = emailInfo;
+            }
+        }
+    </script>
+</body>
+</html>
