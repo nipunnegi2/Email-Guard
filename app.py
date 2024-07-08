@@ -3,7 +3,7 @@ import requests
 
 app = Flask(__name__)
 
-API_KEY = 'd71sr7mjnocpnegswirkjsek2ma2mwon5m3qahr2pj1kxw2t'
+API_KEY = 'Add your API KEY here !!'
 API_URL = 'https://emailrep.io/'
 
 def get_email_reputation(email):
