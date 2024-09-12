@@ -19,7 +19,7 @@ def get_email_reputation(email):
 
 @app.route('/')
 def index():
-    return render_template('index.html')
+     return send_from_directory(os.getcwd(), 'index.html')
 
 @app.route('/check', methods=['POST'])
 def check():
