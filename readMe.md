@@ -1,5 +1,5 @@
 ## SafeMail
-
+<a href="https://nipunnegi2.github.io/Email-Guard/">UiDemo</a>
 SafeMail is a web application that allows users to check the reputation of an email address using the [emailrep.io](https://emailrep.io/) API. It provides information about the email's reputation, whether it is suspicious, and other related details.
 
 ## Table of Contents
